@@ -74,8 +74,8 @@ html{scroll-padding-top:84px}
 .hero-carousel-status{font:10px var(--sans);letter-spacing:1px}
 
 /* Marquee */
-.marquee{background:#2f8cff;border-color:#2f8cff;color:#05080d;overflow:hidden}
-.marquee-track{background:transparent;color:#05080d;animation:marqueeScrollOnce 24s linear infinite;white-space:nowrap}
+.marquee{background:#2f8cff;border-color:#2f8cff;color:#fff;overflow:hidden}
+.marquee-track{background:transparent;color:#fff;animation:marqueeScrollOnce 24s linear infinite;white-space:nowrap}
 @keyframes marqueeScrollOnce{from{transform:translateX(100vw)}to{transform:translateX(-100%)}}
 
 /* Section heading sizing (services / work / portfolio) */
@@ -268,3 +268,38 @@ html{scroll-padding-top:84px}
   .nav-dropdown a{padding:14px 6vw 14px 10vw;border-top:1px solid #263443;font-size:13px}
   .contact-bottom{padding-top:28px;padding-bottom:28px}
 }
+
+/* Lightbox (photography page): image drawn as a background so it isn't a savable <img> */
+[data-lightbox] .project-media{cursor:zoom-in}
+[data-lightbox] img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
+.lightbox{position:fixed;inset:0;z-index:1000;display:none;background:rgba(10,14,13,.7);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);cursor:zoom-out}
+.lightbox.open{display:block}
+.lightbox-img{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:center/100% 100% no-repeat}
+.lightbox-close{position:absolute;top:16px;right:22px;border:0;background:none;color:#fff;font-size:34px;line-height:1;cursor:pointer}
+
+/* Photography grid: justified rows (equal row height, widths follow each photo's ratio), no cropping */
+.photo-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;grid-template-columns:none}
+.photo-grid .project-card.last-row{flex-grow:0}
+.photo-grid .project-card{--r:1.5;flex:calc(var(--r)*100) 1 calc(var(--r)*340px);margin:0!important;min-width:0}
+.photo-grid .project-meta{display:none}
+.photo-grid .project-media{aspect-ratio:auto;border:0;background:transparent}
+.photo-grid .project-media img{display:block;width:100%;height:auto;filter:none;transform:none}
+.photo-grid .project-media:hover img{transform:none;filter:none}
+.photo-grid .project-media:after{display:none}
+.photo-grid .row-break{flex:0 0 100%;height:0;margin-top:-10px}
+@media(max-width:600px){.photo-grid .project-card{flex-basis:calc(var(--r)*190px)}.photo-grid .row-break{display:none}}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);border:0;background:none;color:#fff;font-size:56px;line-height:1;padding:12px 18px;cursor:pointer;opacity:.75}
+.lightbox-nav:hover{opacity:1}
+.lightbox-prev{left:10px}
+.lightbox-next{right:10px}
+
+/* Photography hero: full-bleed photo background at the page width; copy sits in the empty dark band at the top */
+.hero-photo{height:min(66.667vw,72vh);min-height:0;display:flex;align-items:center;justify-content:flex-end;padding-top:0;padding-bottom:0;padding-right:4vw;background:url("photography/concept-portrait-01.jpg") left 4vw top -6vh/contain no-repeat #000}
+.hero-photo .hero-copy{width:max(300px,calc(100vw - min(100vw,108vh) - 14vw));text-align:left;display:flex;flex-direction:column;align-items:flex-start}
+.hero-photo .eyebrow{color:#aeb7c0;margin-bottom:14px}
+.hero-photo h1{color:#fff;font-size:clamp(28px,3vw,46px);margin-bottom:18px}
+.hero-photo h1 em{color:#62b2ff}
+.hero-photo .hero-intro{color:#c8d1da;margin-bottom:22px}
+.hero-photo .text-link{color:#fff;border-color:#fff}
+.hero-photo .hero-status{color:#fff;border-color:#2f8cff;margin-top:16px}
+@media(max-width:820px){.hero-photo{height:auto;flex-direction:column;align-items:stretch;justify-content:flex-start;padding:0;background:#000}.hero-photo::before{content:'';display:block;width:100%;aspect-ratio:3/2;background:url("photography/concept-portrait-01.jpg") center/contain no-repeat}.hero-photo .hero-copy{width:100%;padding:24px 6vw 40px;background:none}}
