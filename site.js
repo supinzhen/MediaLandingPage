@@ -13,23 +13,25 @@
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setOpen(false); });
   }
 
-  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  // Clean URLs: "/", "/film" and "/film.html" all resolve to the same page name.
+  const pageName = (path) => path.replace(/\/+$/, '').replace(/^.*\//, '').replace(/\.html$/, '') || 'index';
+  const currentPage = pageName(location.pathname);
 
   // Highlight the current page in the top-level nav (plain page links, no #hash).
   document.querySelectorAll('.nav a').forEach((link) => {
     const href = link.getAttribute('href');
     if (href.includes('#')) return;
-    if ((href || 'index.html') === currentPage) link.classList.add('active');
+    if (pageName(href || '/') === currentPage) link.classList.add('active');
   });
 
-  // Scrollspy for in-page anchors — including "index.html#section" dropdown links,
+  // Scrollspy for in-page anchors — including "/#section" dropdown links,
   // which only spy on sections that actually live on the current page.
   const linkFor = new Map();
   const sections = [];
   document.querySelectorAll('.nav a[href*="#"]').forEach((link) => {
     const [page, hash] = link.getAttribute('href').split('#');
     if (!hash) return;
-    if (page && page !== currentPage) return;
+    if (page && pageName(page) !== currentPage) return;
     const section = document.getElementById(hash);
     if (!section) return;
     if (!linkFor.has(section)) linkFor.set(section, []);
