@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="蘇品甄 Annie Su 的商業攝影作品集">
+  <title>蘇品甄 Annie Su | Commercial Photography</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="回到首頁"><span>AS</span><small>蘇品甄 Annie Su / 作品集</small></a>
+    <button class="nav-toggle" type="button" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="主要導覽">
+      <div class="nav-item">
+        <a href="index.html">首頁</a>
+        <div class="nav-dropdown">
+          <a href="index.html#services">服務</a>
+          <a href="index.html#about">關於</a>
+          <a href="index.html#portfolio">作品集</a>
+          <a href="index.html#contact">聯絡</a>
+        </div>
+      </div>
+      <a href="film.html">影像拍攝與剪輯</a>
+      <a href="graphic-design.html">平面設計</a>
+      <a href="photography.html">商業攝影</a>
+    </nav>
+    <a class="header-mail" href="index.html#contact">接案洽詢 <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="marquee" aria-label="專業領域">
+      <div class="marquee-track"><span>PRODUCT PHOTOGRAPHY</span><b>✳</b><span>CONCEPT PORTRAIT</span><b>✳</b><span>STUDIO LIGHTING</span><b>✳</b><span>EDITORIAL</span></div>
+    </section>
+    <section class="hero section-pad theme-dark">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot"></span> PHOTOGRAPHY</p>
+        <h1>把光線與質感，<br>拍成有記憶點的<em>畫面</em>。</h1>
+        <p class="hero-intro">產品、靜物、人像與概念創作。</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#work">瀏覽作品 <span>↓</span></a>
+          <a class="text-link" href="index.html#contact">一起做點有意思的 <span>↗</span></a>
+        </div>
+        <p class="hero-status"><span class="hero-status-dot"></span>目前接案中</p>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image-wrap hero-carousel" aria-label="精選攝影作品輪播">
+          <div class="hero-slide is-active">
+            <img src="photography/product-coffee-flatlay.jpg" alt="咖啡與眼鏡情境商品攝影" loading="eager">
+            <div class="image-caption"><span>PRODUCT / 01</span></div>
+          </div>
+          <div class="hero-slide">
+            <img src="photography/product-cake-boxes.jpg" alt="L'idée Sweet 甜點包裝盒商品攝影" loading="lazy">
+            <div class="image-caption"><span>PRODUCT / 02</span></div>
+          </div>
+          <div class="hero-slide">
+            <img src="photography/product-cake-topview.jpg" alt="L'idée Sweet 蛋糕俯拍商品攝影" loading="lazy">
+            <div class="image-caption"><span>PRODUCT / 03</span></div>
+          </div>
+          <div class="hero-slide">
+            <img src="photography/concept-portrait-01.jpg" alt="Hobbiction 概念人像攝影" loading="lazy">
+            <div class="image-caption"><span>CONCEPT PORTRAIT / 04</span></div>
+          </div>
+          <div class="hero-carousel-controls"><button class="hero-carousel-button" type="button" data-carousel-prev aria-label="上一件作品">←</button><span class="hero-carousel-status">01 / 04</span><button class="hero-carousel-button" type="button" data-carousel-next aria-label="下一件作品">→</button></div>
+        </div>
+        <div class="hero-side-note">STUDIO / CONCEPT<br>PRODUCT SHOT</div>
+      </div>
+    </section>
+
+    <section class="work section-pad theme-light" id="work">
+      <div class="section-heading">
+        <div><p class="eyebrow">02 / SELECTED WORK</p><h2>攝影作品集<span>.</span></h2></div>
+        <p class="section-note">從一束光開始，<br>到成為有記憶點的畫面。</p>
+      </div>
+      <div class="filter-bar" role="group" aria-label="作品分類">
+        <button class="filter active" data-filter="all">全部 <sup>09</sup></button>
+        <button class="filter" data-filter="concept">概念創作 <sup>04</sup></button>
+        <button class="filter" data-filter="product">商品靜物 <sup>04</sup></button>
+        <button class="filter" data-filter="editorial">人像雜誌 <sup>01</sup></button>
+      </div>
+      <div class="project-grid">
+        <article class="project-card" data-category="concept">
+          <div class="project-media"><img src="photography/concept-light-cross.jpg" alt="光之縫隙概念攝影作品" loading="lazy"></div>
+          <div class="project-meta"><span>01 — CONCEPT</span></div>
+          <h3>光之縫隙 <em>Light Fragments</em></h3>
+          <p>概念攝影創作 / 棚燈設計・光影構成</p>
+        </article>
+        <article class="project-card" data-category="editorial">
+          <div class="project-media"><img src="photography/polaris-magazine-cover.jpg" alt="POLARIS 雜誌封面人像攝影" loading="lazy"></div>
+          <div class="project-meta"><span>02 — EDITORIAL</span></div>
+          <h3>POLARIS <em>雜誌封面</em></h3>
+          <p>人像編輯攝影 / 棚拍執行・版面構成</p>
+        </article>
+        <article class="project-card" data-category="concept">
+          <div class="project-media"><img src="photography/concept-portrait-01.jpg" alt="Hobbiction 概念人像攝影" loading="lazy"></div>
+          <div class="project-meta"><span>03 — CONCEPT PORTRAIT</span></div>
+          <h3>Hobbiction <em>— 人偶與人</em></h3>
+          <p>概念人像創作 / 燈光設計・情境構成</p>
+        </article>
+        <article class="project-card" data-category="concept">
+          <div class="project-media"><img src="photography/concept-portrait-02.jpg" alt="Hobbiction 藍色概念人像攝影" loading="lazy"></div>
+          <div class="project-meta"><span>04 — CONCEPT PORTRAIT</span></div>
+          <h3>Hobbiction <em>— 藍色記憶</em></h3>
+          <p>概念人像創作 / 色膠燈光・情緒構圖</p>
+        </article>
+        <article class="project-card" data-category="concept">
+          <div class="project-media"><img src="photography/concept-broken-statue.jpg" alt="殘像概念靜物攝影" loading="lazy"></div>
+          <div class="project-meta"><span>05 — CONCEPT</span></div>
+          <h3>殘像 <em>Afterimage</em></h3>
+          <p>概念靜物創作 / 色膠燈光・質感捕捉</p>
+        </article>
+        <article class="project-card" data-category="product">
+          <div class="project-media"><img src="photography/product-pastry.jpg" alt="Gontran Cherrier 甜點商品攝影" loading="lazy"></div>
+          <div class="project-meta"><span>06 — PRODUCT</span></div>
+          <h3>Gontran Cherrier <em>甜點形象</em></h3>
+          <p>商品靜物攝影 / 棚燈配置・質感呈現</p>
+        </article>
+        <article class="project-card" data-category="product">
+          <div class="project-media"><img src="photography/product-coffee-alley33.jpg" alt="33巷咖啡品牌商品攝影" loading="lazy"></div>
+          <div class="project-meta"><span>07 — PRODUCT</span></div>
+          <h3>33巷咖啡 <em>品牌形象</em></h3>
+          <p>商品靜物攝影 / 情境布置・光線設計</p>
+        </article>
+        <article class="project-card" data-category="product">
+          <div class="project-media"><img src="photography/product-ritz-crackers.jpg" alt="RITZ 餅乾情境商品攝影" loading="lazy"></div>
+          <div class="project-meta"><span>08 — PRODUCT</span></div>
+          <h3>RITZ <em>餅乾情境</em></h3>
+          <p>商品靜物攝影 / 情境布置・光線設計</p>
+        </article>
+        <article class="project-card" data-category="product">
+          <div class="project-media"><img src="photography/product-marathon-medals.jpg" alt="英雄馬拉松完賽獎牌商品攝影" loading="lazy"></div>
+          <div class="project-meta"><span>09 — PRODUCT</span></div>
+          <h3>英雄馬拉松 <em>完賽獎牌</em></h3>
+          <p>商品靜物攝影 / 質感捕捉・細節呈現</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="contact-bottom theme-dark section-pad">
+    <span>TAIWAN / KAOHSIUNG</span>
+    <span>© 2026 蘇品甄 Annie Su</span>
+    <span><a href="https://www.instagram.com/pinzhenshots?stkn=MTA5cXdkYWlyOXZ6aw==" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a> &nbsp; YOUTUBE ↗</span>
+  </footer>
+  <script src="script.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

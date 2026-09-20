@@ -51,11 +51,27 @@ previousHeroButton?.addEventListener('click', () => showHeroSlide(activeHeroSlid
 nextHeroButton?.addEventListener('click', () => showHeroSlide(activeHeroSlide + 1, 'next'));
 
 if (heroSlides.length > 1) {
-  let heroRotation = setInterval(() => showHeroSlide(activeHeroSlide + 1, 'next'), 12000);
+  const heroInterval = Number(heroCarousel?.dataset.interval) || 3000;
+  let heroRotation = setInterval(() => showHeroSlide(activeHeroSlide + 1, 'next'), heroInterval);
   const resetHeroRotation = () => {
     clearInterval(heroRotation);
-    heroRotation = setInterval(() => showHeroSlide(activeHeroSlide + 1, 'next'), 12000);
+    heroRotation = setInterval(() => showHeroSlide(activeHeroSlide + 1, 'next'), heroInterval);
   };
   previousHeroButton?.addEventListener('click', resetHeroRotation);
   nextHeroButton?.addEventListener('click', resetHeroRotation);
 }
+
+document.querySelectorAll('iframe[srcdoc]').forEach((iframe) => {
+  iframe.addEventListener('load', () => {
+    try {
+      const doc = iframe.contentDocument || iframe.contentWindow?.document;
+      const link = doc?.querySelector('a');
+      link?.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetUrl = link.getAttribute('href');
+        iframe.removeAttribute('srcdoc');
+        iframe.src = targetUrl;
+      });
+    } catch (err) {}
+  });
+});
